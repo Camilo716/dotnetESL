@@ -21,6 +21,11 @@ public class Client
         _socket.Connect(HOST, PORT);
     }
 
+    public void CloseConnection()
+    {
+        _socket.Close();
+    }
+
     public string Authenticate(string password)
     {
         string authRequest = RecolectData(); 
@@ -59,4 +64,5 @@ public class Client
 
         return data;
     }
+
 }
