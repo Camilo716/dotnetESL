@@ -37,6 +37,15 @@ public class Client
         return authResponse;
     }
 
+    public string Uptime()
+    {
+        SendData("api uptime");
+
+        string uptimeResponse = RecolectData();
+
+        return uptimeResponse;
+    }
+
     private void SendData(string data)
     {
         byte[] msg = Encoding.ASCII.GetBytes($"{data}\n\n");
