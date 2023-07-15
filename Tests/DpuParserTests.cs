@@ -19,4 +19,16 @@ public class DpuParserTests
 
         Assert.That(contentLenght, Is.EqualTo("43"));
     }
+
+    [Test]
+    public void GetReplyTextTest()
+    {
+        string dpu =
+        "Content-Type: command/reply\n"+
+        "Reply-Text: -ERR invalid\n\n";
+        string key = "ReplyText";
+
+        string replyText = DpuParser.GetLineValueFromKey(dpu, key);
+        Assert.That(replyText, Is.EqualTo("-ERR invalid/n/n"));
+    }
 }
