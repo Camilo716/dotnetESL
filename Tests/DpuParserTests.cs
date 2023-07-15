@@ -13,8 +13,9 @@ public class DpuParserTests
         string dpu =
         "Content-Type: api/response\n" +
         "Content-Length: 43\n\n";
+        string key = "Content-length";
 
-        int contentLenght = DpuParser.GetContentLenght(dpu);
+        int contentLenght = DpuParser.GetLineValueFromKey(dpu, key);
 
         Assert.That(contentLenght, Is.EqualTo(43));
     }
