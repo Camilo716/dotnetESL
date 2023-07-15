@@ -29,11 +29,11 @@ public class Client
 
     public string Authenticate(string password)
     {
-        string authRequest = RecolectFirstDpu(); 
+        string authRequest = RecolectHeaderResponse(); 
 
         SendData($"auth {password}");
 
-        string authResponse = RecolectFirstDpu(); 
+        string authResponse = RecolectHeaderResponse(); 
 
         string responseValue = DpuParser.GetLineValueFromKey(authResponse, "Reply-Text");
         return responseValue;
@@ -43,7 +43,7 @@ public class Client
     {
         SendData("api uptime");
 
-        string uptimeHeader = RecolectFirstDpu();
+        string uptimeHeader = RecolectHeaderResponse();
         string uptimeResponse = RecolectBodyResponse(uptimeHeader);
         
         try
@@ -77,7 +77,7 @@ public class Client
         return contentBuffer;
     }
 
-    private string RecolectFirstDpu()
+    private string RecolectHeaderResponse()
     {
         string dataBuffer = "";
 
