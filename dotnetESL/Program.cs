@@ -11,13 +11,5 @@ class Program
         Console.WriteLine(client.Authenticate("ClueCon"));
 
         Console.WriteLine(client.Uptime());
-
-        string packageDataUnit = "Content-Type: api/response\nContent-Length: 5123\n\n";
-
-        var lines = packageDataUnit.Split();
-        
-
-        
-        System.Console.WriteLine();
     }
 }

@@ -14,7 +14,7 @@ public class ClientTests
     }
 
     [Test]
-    public void AuthenticationTest()
+    public void SuccesfullAuthenticationTest()
     {
         string password = "ClueCon";
 
@@ -24,6 +24,12 @@ public class ClientTests
         "Content-Type: command/reply\n"+
         "Reply-Text: +OK accepted\n\n";
         Assert.That(authResponse, Is.EqualTo(succesfullAuthResponse));
+    }
+
+    [Test]
+    public void FailedAuthenticationTest()
+    {
+        
     }
 
     [Test]
