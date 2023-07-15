@@ -39,22 +39,14 @@ public class Client
         return responseValue;
     }
 
-    public int ApiCommand(string args)
+    public string ApiCommand(string args)
     {
         SendData($"api {args}");
 
-        string uptimeHeader = RecolectHeaderResponse();
-        string uptimeResponse = RecolectBodyResponse(uptimeHeader);
+        string headerResponse = RecolectHeaderResponse();
+        string bodyResponse = RecolectBodyResponse(headerResponse);
         
-        try
-        {
-            int intResponse = int.Parse(uptimeResponse);
-            return intResponse;
-        }
-        catch (System.Exception)
-        {
-            throw new Exception("Did not receive a number");
-        }
+        return bodyResponse;
     }
 
     private void SendData(string data)
