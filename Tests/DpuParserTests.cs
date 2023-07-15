@@ -16,6 +16,6 @@ public class DpuParserTests
 
         int contentLenght = DpuParser.GetContentLenght(dpu);
 
-        Assert.That(contentLenght, Is.EqualTo(contentLenght));
+        Assert.That(contentLenght, Is.EqualTo(4));
     }
 }
