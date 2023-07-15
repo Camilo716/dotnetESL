@@ -29,7 +29,7 @@ public class ClientTests
     [Test]
     public void FailedAuthenticationTest()
     {
-        string password = "ClueCon";
+        string password = "InvPass";
 
         string authResponse = _client.Authenticate(password);
 

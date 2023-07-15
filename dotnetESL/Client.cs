@@ -64,7 +64,7 @@ public class Client
 
     private string RecolectBodyResponse(string headerDpu)
     {
-        int contentLenght = DpuParser.GetContentLenght(headerDpu);
+        int contentLenght = DpuParser.GetLineValueFromKey(headerDpu, "Content-Length");
 
         string contentBuffer = "";
 

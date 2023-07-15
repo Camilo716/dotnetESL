@@ -13,7 +13,7 @@ public class DpuParserTests
         string dpu =
         "Content-Type: api/response\n" +
         "Content-Length: 43\n\n";
-        string key = "Content-length";
+        string key = "Content-Length";
 
         int contentLenght = DpuParser.GetLineValueFromKey(dpu, key);
 

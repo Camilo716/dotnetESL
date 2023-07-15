@@ -8,7 +8,7 @@ class Program
 
         client.Connect();
 
-        Console.WriteLine(client.Authenticate("ClueCon"));
+        Console.WriteLine(client.Authenticate("sds"));
 
         Console.WriteLine(client.Uptime());
     }
