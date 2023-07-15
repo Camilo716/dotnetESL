@@ -66,7 +66,6 @@ public class Client
     {
         int contentLenght = DpuParser.GetContentLenght(headerDpu);
 
-        int contentCounter = 0;
         string contentBuffer = "";
 
         while (contentBuffer.Length < contentLenght)
