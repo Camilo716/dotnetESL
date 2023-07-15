@@ -26,6 +26,19 @@ public class ClientTests
         Assert.That(authResponse, Is.EqualTo(succesfullAuthResponse));
     }
 
+    [Test]
+    public void ApiUptimeTest()
+    {
+        _client.Authenticate("ClueCon");
+
+        string uptimeResponse = _client.Uptime();
+
+        string succesfullUptimeResponse =
+        "Content-Type: api/response\n"+
+        "Content-Length: 5\n\n";
+        Assert.That(uptimeResponse, Is.EqualTo(succesfullUptimeResponse));
+    }
+
     [TearDown]
     public void TearDown()
     {
