@@ -8,8 +8,8 @@ class Program
 
         client.Connect();
 
-        Console.WriteLine(client.Authenticate("sds"));
-
-        Console.WriteLine(client.Uptime());
+        client.Authenticate("ClueCon");
+        client.Uptime();
+        client.CloseConnection();
     }
 }
