@@ -35,7 +35,8 @@ public class Client
 
         string authResponse = RecolectFirstDpu(); 
 
-        return authResponse;
+        string responseValue = DpuParser.GetLineValueFromKey(authResponse, "Reply-Text");
+        return responseValue;
     }
 
     public int Uptime()
