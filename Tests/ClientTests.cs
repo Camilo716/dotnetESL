@@ -29,14 +29,13 @@ public class ClientTests
     [Test]
     public void ApiUptimeTest()
     {
+        _client.CloseConnection();
+        _client.Connect();
         _client.Authenticate("ClueCon");
 
-        string uptimeResponse = _client.Uptime();
+        int uptimeResponse = _client.Uptime();
 
-        string succesfullUptimeResponse =
-        "Content-Type: api/response\n"+
-        "Content-Length: 5\n\n";
-        Assert.That(uptimeResponse, Is.EqualTo(succesfullUptimeResponse));
+        Assert.That(uptimeResponse, Is.EqualTo(1));
     }
 
     [TearDown]
