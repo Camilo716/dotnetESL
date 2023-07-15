@@ -38,7 +38,7 @@ public class ClientTests
     {
         _client.Authenticate("ClueCon");
 
-        int uptimeResponse = _client.Uptime();
+        int uptimeResponse = _client.ApiCommand("uptime");
 
         bool timeIsRunningAndResponseIsANumber = uptimeResponse > 0;
         Assert.True(timeIsRunningAndResponseIsANumber);

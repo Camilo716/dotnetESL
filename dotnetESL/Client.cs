@@ -39,9 +39,9 @@ public class Client
         return responseValue;
     }
 
-    public int Uptime()
+    public int ApiCommand(string args)
     {
-        SendData("api uptime");
+        SendData($"api {args}");
 
         string uptimeHeader = RecolectHeaderResponse();
         string uptimeResponse = RecolectBodyResponse(uptimeHeader);

@@ -9,7 +9,7 @@ class Program
         client.Connect();
 
         client.Authenticate("ClueCon");
-        client.Uptime();
+        client.ApiCommand("uptime");
         client.CloseConnection();
     }
 }
