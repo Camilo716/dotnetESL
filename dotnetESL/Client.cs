@@ -1,5 +1,6 @@
 using System.Net.Sockets;
 using System.Text;
+using dotnetESL.Util;
 
 namespace dotnetESL.Client;
 
@@ -28,22 +29,31 @@ public class Client
 
     public string Authenticate(string password)
     {
-        string authRequest = RecolectData(); 
+        string authRequest = RecolectFirstDpu(); 
 
         SendData($"auth {password}");
 
-        string authResponse = RecolectData(); 
+        string authResponse = RecolectFirstDpu(); 
 
         return authResponse;
     }
 
-    public string Uptime()
+    public int Uptime()
     {
         SendData("api uptime");
 
-        string uptimeResponse = RecolectData();
-
-        return uptimeResponse;
+        string uptimeHeader = RecolectFirstDpu();
+        string uptimeResponse = RecolectBodyResponse(uptimeHeader);
+        
+        try
+        {
+            int intResponse = int.Parse(uptimeResponse);
+            return intResponse;
+        }
+        catch (System.Exception)
+        {
+            throw new Exception("Did not receive a number");
+        }
     }
 
     private void SendData(string data)
@@ -52,7 +62,22 @@ public class Client
         _socket.Send(msg);
     }
 
-    private string RecolectData()
+    private string RecolectBodyResponse(string headerDpu)
+    {
+        int contentLenght = DpuParser.GetContentLenght(headerDpu);
+
+        int contentCounter = 0;
+        string contentBuffer = "";
+
+        while (contentBuffer.Length < contentLenght)
+        {
+            contentBuffer += ReceiveData();
+        }
+        
+        return contentBuffer;
+    }
+
+    private string RecolectFirstDpu()
     {
         string dataBuffer = "";
 
