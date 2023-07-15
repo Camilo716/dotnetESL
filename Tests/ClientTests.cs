@@ -33,8 +33,8 @@ public class ClientTests
 
         int uptimeResponse = _client.Uptime();
 
-        bool timeIsRunning = uptimeResponse > 0;
-        Assert.True(timeIsRunning);
+        bool timeIsRunningAndResponseIsANumber = uptimeResponse > 0;
+        Assert.True(timeIsRunningAndResponseIsANumber);
     }
 
     [TearDown]
