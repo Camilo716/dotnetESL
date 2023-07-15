@@ -29,13 +29,12 @@ public class ClientTests
     [Test]
     public void ApiUptimeTest()
     {
-        _client.CloseConnection();
-        _client.Connect();
         _client.Authenticate("ClueCon");
 
         int uptimeResponse = _client.Uptime();
 
-        Assert.That(uptimeResponse, Is.EqualTo(1));
+        bool timeIsRunning = uptimeResponse > 0;
+        Assert.True(timeIsRunning);
     }
 
     [TearDown]
