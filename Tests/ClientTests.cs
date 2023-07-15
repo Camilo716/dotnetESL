@@ -29,7 +29,11 @@ public class ClientTests
     [Test]
     public void FailedAuthenticationTest()
     {
-        
+        string password = "ClueCon";
+
+        string authResponse = _client.Authenticate(password);
+
+        Assert.That(authResponse, Is.EqualTo("-ERR invalid"));
     }
 
     [Test]
