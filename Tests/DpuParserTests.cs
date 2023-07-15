@@ -15,8 +15,8 @@ public class DpuParserTests
         "Content-Length: 43\n\n";
         string key = "Content-Length";
 
-        int contentLenght = DpuParser.GetLineValueFromKey(dpu, key);
+        string contentLenght = DpuParser.GetLineValueFromKey(dpu, key);
 
-        Assert.That(contentLenght, Is.EqualTo(43));
+        Assert.That(contentLenght, Is.EqualTo("43"));
     }
 }
