@@ -20,10 +20,7 @@ public class ClientTests
 
         string authResponse = _client.Authenticate(password);
 
-        string succesfullAuthResponse =
-        "Content-Type: command/reply\n"+
-        "Reply-Text: +OK accepted\n\n";
-        Assert.That(authResponse, Is.EqualTo(succesfullAuthResponse));
+        Assert.That(authResponse, Is.EqualTo("+OK accepted"));
     }
 
     [Test]
