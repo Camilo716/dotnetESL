@@ -26,5 +26,8 @@ client.Authenticate(password)
 // Use api commands, ex:
 client.ApiCommand("uptime");
 client.ApiCommand("originate user/1002 &echo()")
+
+client.CloseConnection();
+
   
 ````
