@@ -8,5 +8,23 @@ see https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Modules/mod
 
 
 ### Requirements:
-- A FreeSWITCH server to connect
-- dotnet 6
+- FreeSWITCH server to connect. For local development you can use https://github.com/Camilo716/FreeSWITCH
+- Dotnet 6
+
+### Usage
+
+````
+string ip = "0.0.0.0";
+int port = 0000
+var client = new Client(ip, port);
+
+client.Connect()
+
+string password = "ClueCon"
+client.Authenticate(password)
+
+// Use api commands, ex:
+client.ApiCommand("uptime");
+client.ApiCommand("originate user/1002 &echo()")
+  
+````
