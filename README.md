@@ -9,7 +9,7 @@ see https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Modules/mod
 
 ### Requirements:
 - FreeSWITCH server to connect. For local development can use https://github.com/Camilo716/FreeSWITCH
-- Dotnet 6
+- .NET 6
 
 ### Usage
 
