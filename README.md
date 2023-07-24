@@ -9,3 +9,4 @@ see https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Modules/mod
 
 ### Requirements:
 - A FreeSWITCH server to connect
+- dotnet 6
