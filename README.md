@@ -28,6 +28,4 @@ client.ApiCommand("uptime");
 client.ApiCommand("originate user/1002 &echo()")
 
 client.CloseConnection();
-
-  
 ````
