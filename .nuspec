@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>dotnetESL</id>
+    <version>1.0.0</version>
+    <title>Mi Paquete NuGet</title>
+    <authors>Camilo Gonzalez</authors>
+    <owners>Camilo Gonzalez</owners>
+    <description>Dotnet freeswitch event socket library, see https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Modules/mod_event_socket_1048924/</description>
+  </metadata>
+  <files>
+    <file src="**" target=""/>
+  </files>
+</package>
